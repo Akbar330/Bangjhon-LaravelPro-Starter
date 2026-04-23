@@ -1,0 +1,57 @@
+{
+    "name": "kaizen/laravel-pro-starter",
+    "description": "A premium Laravel starter package with custom authentication, role-based dashboards, and modern Tailwind-powered UI.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "laravel",
+        "package",
+        "starter",
+        "authentication",
+        "dashboard",
+        "tailwind"
+    ],
+    "require": {
+        "php": "^8.1",
+        "laravel/framework": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "fakerphp/faker": "^1.23",
+        "laravel/pint": "^1.17",
+        "mockery/mockery": "^1.6",
+        "nunomaduro/collision": "^7.0|^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.5|^11.5|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Kaizen\\LaravelProStarter\\": "src/",
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": [
+            "@php artisan test"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Kaizen\\LaravelProStarter\\KaizenProStarterServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
