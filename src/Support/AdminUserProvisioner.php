@@ -1,6 +1,6 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Support;
+namespace Bangjhon\LaravelProStarter\Support;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -9,7 +9,7 @@ class AdminUserProvisioner
     public function provision(): array
     {
         $modelClass = UserModel::className();
-        $credentials = config('kaizen-pro-starter.admin');
+        $credentials = config('bangjhon-pro-starter.admin');
 
         $user = $modelClass::query()->firstOrNew([
             'email' => $credentials['email'],

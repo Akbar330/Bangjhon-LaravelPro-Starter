@@ -1,8 +1,8 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Support;
+namespace Bangjhon\LaravelProStarter\Support;
 
-use Kaizen\LaravelProStarter\Models\Activity;
+use Bangjhon\LaravelProStarter\Models\Activity;
 
 class ActivityLogger
 {

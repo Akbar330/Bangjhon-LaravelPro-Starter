@@ -1,12 +1,12 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Http\Controllers;
+namespace Bangjhon\LaravelProStarter\Http\Controllers;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
-use Kaizen\LaravelProStarter\Models\Activity;
-use Kaizen\LaravelProStarter\Support\UserModel;
+use Bangjhon\LaravelProStarter\Models\Activity;
+use Bangjhon\LaravelProStarter\Support\UserModel;
 
 class DashboardController extends Controller
 {
@@ -14,7 +14,7 @@ class DashboardController extends Controller
     {
         $userModel = UserModel::className();
 
-        return view('kaizen-pro-starter::dashboard.index', [
+        return view('bangjhon-pro-starter::dashboard.index', [
             'user' => Auth::user(),
             'stats' => [
                 ['label' => 'Community members', 'value' => $userModel::count(), 'tone' => 'blue'],
@@ -33,7 +33,7 @@ class DashboardController extends Controller
     {
         $userModel = UserModel::className();
 
-        return view('kaizen-pro-starter::dashboard.admin', [
+        return view('bangjhon-pro-starter::dashboard.admin', [
             'stats' => [
                 ['label' => 'Total users', 'value' => $userModel::count(), 'tone' => 'blue'],
                 ['label' => 'Admin accounts', 'value' => $userModel::where('role', 'admin')->count(), 'tone' => 'violet'],
@@ -55,7 +55,7 @@ class DashboardController extends Controller
     {
         $userModel = UserModel::className();
 
-        return view('kaizen-pro-starter::dashboard.users', [
+        return view('bangjhon-pro-starter::dashboard.users', [
             'users' => $userModel::query()
                 ->latest()
                 ->paginate(10),

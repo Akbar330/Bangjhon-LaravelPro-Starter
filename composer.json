@@ -1,5 +1,5 @@
 {
-    "name": "kaizen/laravel-pro-starter",
+    "name": "bangjhon/laravel-pro-starter",
     "description": "A premium Laravel starter package with custom authentication, role-based dashboards, and modern Tailwind-powered UI.",
     "type": "library",
     "license": "MIT",
@@ -24,7 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Kaizen\\LaravelProStarter\\": "src/",
+            "Bangjhon\\LaravelProStarter\\": "src/",
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
             "Database\\Seeders\\": "database/seeders/"
@@ -43,7 +43,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Kaizen\\LaravelProStarter\\KaizenProStarterServiceProvider"
+                "Bangjhon\\LaravelProStarter\\BangjhonProStarterServiceProvider"
             ]
         }
     },

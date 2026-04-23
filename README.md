@@ -1,6 +1,6 @@
-# kaizen/laravel-pro-starter
+# bangjhon/laravel-pro-starter
 
-`kaizen/laravel-pro-starter` is a production-ready Laravel package that adds a custom authentication system, role-aware dashboards, and a premium modern UI to any Laravel 10+ application.
+`bangjhon/laravel-pro-starter` is a production-ready Laravel package that adds a custom authentication system, role-aware dashboards, and a premium modern UI to any Laravel 10+ application.
 
 ## Features
 
@@ -22,13 +22,13 @@
 Install the package via Composer:
 
 ```bash
-composer require kaizen/laravel-pro-starter
+composer require bangjhon/laravel-pro-starter
 ```
 
 Run the installer:
 
 ```bash
-php artisan kaizen:install
+php artisan bangjhon:install
 ```
 
 The installer will:
@@ -51,13 +51,13 @@ The package registers the following routes by default:
 - `/admin/dashboard`
 - `/admin/users`
 
-All route names are prefixed with `kaizen.`.
+All route names are prefixed with `bangjhon.`.
 
 ## Default Admin Credentials
 
-These values come from `config/kaizen-pro-starter.php` and can be changed before running the installer.
+These values come from `config/bangjhon-pro-starter.php` and can be changed before running the installer.
 
-- Email: `admin@kaizen.test`
+- Email: `admin@bangjhon.test`
 - Password: `password123`
 
 ## Usage
@@ -72,7 +72,7 @@ After installation:
 Use the included role middleware on your own routes:
 
 ```php
-Route::middleware(['web', 'auth', 'kaizen.role:admin'])->group(function () {
+Route::middleware(['web', 'auth', 'bangjhon.role:admin'])->group(function () {
     Route::get('/reports', fn () => 'Only admins can see this');
 });
 ```
@@ -82,7 +82,7 @@ Route::middleware(['web', 'auth', 'kaizen.role:admin'])->group(function () {
 Publish the package configuration manually if needed:
 
 ```bash
-php artisan vendor:publish --tag=kaizen-pro-starter-config
+php artisan vendor:publish --tag=bangjhon-pro-starter-config
 ```
 
 Useful options:
@@ -96,9 +96,9 @@ Useful options:
 ## Published Resources
 
 ```bash
-php artisan vendor:publish --tag=kaizen-pro-starter-config
-php artisan vendor:publish --tag=kaizen-pro-starter-views
-php artisan vendor:publish --tag=kaizen-pro-starter-assets
+php artisan vendor:publish --tag=bangjhon-pro-starter-config
+php artisan vendor:publish --tag=bangjhon-pro-starter-views
+php artisan vendor:publish --tag=bangjhon-pro-starter-assets
 ```
 
 ## Screenshots
@@ -110,16 +110,16 @@ php artisan vendor:publish --tag=kaizen-pro-starter-assets
 ## Example Commands
 
 ```bash
-php artisan kaizen:install
+php artisan bangjhon:install
 php artisan migrate
-php artisan vendor:publish --tag=kaizen-pro-starter-views
-php artisan route:list --name=kaizen
+php artisan vendor:publish --tag=bangjhon-pro-starter-views
+php artisan route:list --name=bangjhon
 ```
 
 ## Extending The Package
 
 - Update the published views to match your brand.
-- Extend the `kaizen_activity_logs` table with your own event metadata.
+- Extend the `bangjhon_activity_logs` table with your own event metadata.
 - Reuse the package middleware and layout structure for additional admin pages.
 
 ## Testing

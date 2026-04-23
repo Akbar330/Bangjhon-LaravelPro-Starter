@@ -1,10 +1,10 @@
-@extends('kaizen-pro-starter::layouts.guest')
+@extends('bangjhon-pro-starter::layouts.guest')
 
 @section('title', 'Welcome back')
 @section('subtitle', 'Sign in to access your workspace, recent activity, and role-based dashboard.')
 
 @section('content')
-    <form action="{{ route('kaizen.login.attempt') }}" method="POST" class="space-y-5">
+    <form action="{{ route('bangjhon.login.attempt') }}" method="POST" class="space-y-5">
         @csrf
 
         <div>
@@ -27,10 +27,10 @@
         </button>
     </form>
 
-    @if (config('kaizen-pro-starter.registration_enabled', true))
+    @if (config('bangjhon-pro-starter.registration_enabled', true))
         <p class="text-center text-sm text-slate-500">
             New here?
-            <a href="{{ route('kaizen.register') }}" class="font-semibold text-sky-600 transition hover:text-sky-500">Create an account</a>
+            <a href="{{ route('bangjhon.register') }}" class="font-semibold text-sky-600 transition hover:text-sky-500">Create an account</a>
         </p>
     @endif
 @endsection

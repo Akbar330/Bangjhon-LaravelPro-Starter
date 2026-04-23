@@ -1,4 +1,4 @@
-@extends('kaizen-pro-starter::layouts.app')
+@extends('bangjhon-pro-starter::layouts.app')
 
 @section('page-title', 'User Management')
 

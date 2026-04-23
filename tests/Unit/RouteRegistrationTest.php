@@ -11,9 +11,9 @@ class RouteRegistrationTest extends TestCase
     #[Test]
     public function package_routes_are_registered(): void
     {
-        $this->assertTrue(Route::has('kaizen.login'));
-        $this->assertTrue(Route::has('kaizen.dashboard'));
-        $this->assertTrue(Route::has('kaizen.admin.dashboard'));
-        $this->assertTrue(Route::has('kaizen.admin.users'));
+        $this->assertTrue(Route::has('bangjhon.login'));
+        $this->assertTrue(Route::has('bangjhon.dashboard'));
+        $this->assertTrue(Route::has('bangjhon.admin.dashboard'));
+        $this->assertTrue(Route::has('bangjhon.admin.users'));
     }
 }

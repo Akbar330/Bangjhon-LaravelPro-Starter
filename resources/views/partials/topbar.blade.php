@@ -11,7 +11,7 @@
                 <p class="text-sm font-semibold text-slate-900">{{ now()->format('d M Y') }}</p>
             </div>
 
-            <form action="{{ route('kaizen.logout') }}" method="POST">
+            <form action="{{ route('bangjhon.logout') }}" method="POST">
                 @csrf
                 <button type="submit" class="inline-flex items-center justify-center rounded-2xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
                     Logout

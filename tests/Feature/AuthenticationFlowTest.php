@@ -19,13 +19,13 @@ class AuthenticationFlowTest extends TestCase
             'password_confirmation' => 'securepass',
         ]);
 
-        $response->assertRedirect(route('kaizen.dashboard'));
+        $response->assertRedirect(route('bangjhon.dashboard'));
         $this->assertAuthenticated();
         $this->assertDatabaseHas('users', [
             'email' => 'jane@example.com',
             'role' => 'user',
         ]);
-        $this->assertDatabaseHas('kaizen_activity_logs', [
+        $this->assertDatabaseHas('bangjhon_activity_logs', [
             'type' => 'auth.register',
         ]);
     }
@@ -41,7 +41,7 @@ class AuthenticationFlowTest extends TestCase
             'password' => 'password',
         ]);
 
-        $response->assertRedirect(route('kaizen.admin.dashboard'));
+        $response->assertRedirect(route('bangjhon.admin.dashboard'));
         $this->assertAuthenticatedAs($admin);
     }
 
@@ -49,7 +49,7 @@ class AuthenticationFlowTest extends TestCase
     {
         $user = User::factory()->create();
 
-        $response = $this->actingAs($user)->get('/admin/dashboard');
+        $response = $this->actingAs($user)->get(route('bangjhon.admin.dashboard'));
 
         $response->assertForbidden();
     }

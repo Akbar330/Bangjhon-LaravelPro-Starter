@@ -1,15 +1,15 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Commands;
+namespace Bangjhon\LaravelProStarter\Commands;
 
 use Illuminate\Console\Command;
-use Kaizen\LaravelProStarter\Support\AdminUserProvisioner;
+use Bangjhon\LaravelProStarter\Support\AdminUserProvisioner;
 
 class InstallCommand extends Command
 {
-    protected $signature = 'kaizen:install {--force : Overwrite any published files}';
+    protected $signature = 'bangjhon:install {--force : Overwrite any published files}';
 
-    protected $description = 'Install the Kaizen Laravel Pro Starter package resources';
+    protected $description = 'Install the Bangjhon Laravel Pro Starter package resources';
 
     public function handle(AdminUserProvisioner $provisioner): int
     {
@@ -17,19 +17,19 @@ class InstallCommand extends Command
 
         $this->components->info('Publishing package configuration...');
         $this->callSilent('vendor:publish', [
-            '--tag' => 'kaizen-pro-starter-config',
+            '--tag' => 'bangjhon-pro-starter-config',
             '--force' => $force,
         ]);
 
         $this->components->info('Publishing package views...');
         $this->callSilent('vendor:publish', [
-            '--tag' => 'kaizen-pro-starter-views',
+            '--tag' => 'bangjhon-pro-starter-views',
             '--force' => $force,
         ]);
 
         $this->components->info('Publishing package assets...');
         $this->callSilent('vendor:publish', [
-            '--tag' => 'kaizen-pro-starter-assets',
+            '--tag' => 'bangjhon-pro-starter-assets',
             '--force' => $force,
         ]);
 
@@ -39,7 +39,7 @@ class InstallCommand extends Command
         $credentials = $provisioner->provision();
 
         $this->newLine();
-        $this->components->info('Kaizen Pro Starter installed successfully.');
+        $this->components->info('Bangjhon Pro Starter installed successfully.');
         $this->line('Login URL: '.url('/login'));
         $this->line('Admin email: '.$credentials['email']);
         $this->line('Admin password: '.$credentials['password']);

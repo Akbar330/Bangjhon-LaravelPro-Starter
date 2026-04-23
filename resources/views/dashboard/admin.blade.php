@@ -1,11 +1,11 @@
-@extends('kaizen-pro-starter::layouts.app')
+@extends('bangjhon-pro-starter::layouts.app')
 
 @section('page-title', 'Admin Dashboard')
 
 @section('content')
     <section class="grid gap-4 md:grid-cols-2 2xl:grid-cols-4">
         @foreach ($stats as $stat)
-            @include('kaizen-pro-starter::components.stat-card', $stat)
+            @include('bangjhon-pro-starter::components.stat-card', $stat)
         @endforeach
     </section>
 
@@ -16,7 +16,7 @@
                     <p class="text-sm font-medium uppercase tracking-[0.24em] text-slate-400">Latest users</p>
                     <h3 class="mt-2 text-2xl font-semibold tracking-tight text-slate-950">Team growth at a glance</h3>
                 </div>
-                <a href="{{ route('kaizen.admin.users') }}" class="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
+                <a href="{{ route('bangjhon.admin.users') }}" class="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
                     View all users
                 </a>
             </div>

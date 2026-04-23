@@ -1,6 +1,6 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Support;
+namespace Bangjhon\LaravelProStarter\Support;
 
 use Illuminate\Database\Eloquent\Model;
 

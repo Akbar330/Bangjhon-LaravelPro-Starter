@@ -1,6 +1,6 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Http\Controllers;
+namespace Bangjhon\LaravelProStarter\Http\Controllers;
 
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Http\RedirectResponse;
@@ -9,14 +9,14 @@ use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rule;
-use Kaizen\LaravelProStarter\Support\ActivityLogger;
-use Kaizen\LaravelProStarter\Support\UserModel;
+use Bangjhon\LaravelProStarter\Support\ActivityLogger;
+use Bangjhon\LaravelProStarter\Support\UserModel;
 
 class AuthController extends Controller
 {
     public function showLogin()
     {
-        return view('kaizen-pro-starter::auth.login');
+        return view('bangjhon-pro-starter::auth.login');
     }
 
     public function login(Request $request): RedirectResponse
@@ -47,14 +47,14 @@ class AuthController extends Controller
 
     public function showRegister()
     {
-        abort_unless(config('kaizen-pro-starter.registration_enabled', true), 404);
+        abort_unless(config('bangjhon-pro-starter.registration_enabled', true), 404);
 
-        return view('kaizen-pro-starter::auth.register');
+        return view('bangjhon-pro-starter::auth.register');
     }
 
     public function register(Request $request): RedirectResponse
     {
-        abort_unless(config('kaizen-pro-starter.registration_enabled', true), 404);
+        abort_unless(config('bangjhon-pro-starter.registration_enabled', true), 404);
 
         $attributes = $request->validate([
             'name' => ['required', 'string', 'max:255'],
@@ -76,7 +76,7 @@ class AuthController extends Controller
 
         ActivityLogger::log('auth.register', 'A new user account was created.', $user->getAuthIdentifier());
 
-        return redirect()->route('kaizen.dashboard')
+        return redirect()->route('bangjhon.dashboard')
             ->with('status', 'Your account is ready. Welcome aboard.');
     }
 
@@ -89,14 +89,14 @@ class AuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        return redirect()->route('kaizen.login')
+        return redirect()->route('bangjhon.login')
             ->with('status', 'You have been signed out.');
     }
 
     protected function redirectPath(?Authenticatable $user): string
     {
         return ($user?->role ?? 'user') === 'admin'
-            ? route('kaizen.admin.dashboard')
-            : route('kaizen.dashboard');
+            ? route('bangjhon.admin.dashboard')
+            : route('bangjhon.dashboard');
     }
 }

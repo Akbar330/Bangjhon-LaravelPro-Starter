@@ -8,7 +8,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('kaizen_activity_logs', function (Blueprint $table): void {
+        Schema::create('bangjhon_activity_logs', function (Blueprint $table): void {
             $table->id();
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->string('type');
@@ -20,6 +20,6 @@ return new class extends Migration
 
     public function down(): void
     {
-        Schema::dropIfExists('kaizen_activity_logs');
+        Schema::dropIfExists('bangjhon_activity_logs');
     }
 };

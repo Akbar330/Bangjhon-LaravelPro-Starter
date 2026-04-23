@@ -1,6 +1,6 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Http\Middleware;
+namespace Bangjhon\LaravelProStarter\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;

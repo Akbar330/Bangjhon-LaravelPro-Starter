@@ -1,11 +1,11 @@
-@extends('kaizen-pro-starter::layouts.app')
+@extends('bangjhon-pro-starter::layouts.app')
 
 @section('page-title', 'User Dashboard')
 
 @section('content')
     <section class="grid gap-4 md:grid-cols-3">
         @foreach ($stats as $stat)
-            @include('kaizen-pro-starter::components.stat-card', $stat)
+            @include('bangjhon-pro-starter::components.stat-card', $stat)
         @endforeach
     </section>
 
@@ -30,7 +30,7 @@
                     <div class="mt-4 space-y-3 text-sm text-slate-600">
                         <p class="rounded-2xl bg-slate-50 px-4 py-3">Explore your activity feed and published package views.</p>
                         <p class="rounded-2xl bg-slate-50 px-4 py-3">Customize the UI by editing the vendor-published Blade files.</p>
-                        <p class="rounded-2xl bg-slate-50 px-4 py-3">Protect custom routes with `kaizen.role` middleware.</p>
+                        <p class="rounded-2xl bg-slate-50 px-4 py-3">Protect custom routes with `bangjhon.role` middleware.</p>
                     </div>
                 </div>
             </div>

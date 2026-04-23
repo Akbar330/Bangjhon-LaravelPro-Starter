@@ -1,12 +1,12 @@
 <?php
 
-namespace Kaizen\LaravelProStarter\Models;
+namespace Bangjhon\LaravelProStarter\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
 class Activity extends Model
 {
-    protected $table = 'kaizen_activity_logs';
+    protected $table = 'bangjhon_activity_logs';
 
     protected $guarded = [];
 
