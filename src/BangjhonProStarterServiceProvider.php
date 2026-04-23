@@ -12,25 +12,21 @@ class BangjhonProStarterServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->mergeConfigFrom(__DIR__.'/../config/package/bangjhon-pro-starter.php', 'bangjhon-pro-starter');
-
-        $this->commands([
-            InstallCommand::class,
-        ]);
     }
 
-  public function boot(Router $router): void
-{
-    if ($this->app->runningInConsole()) {
-        $this->commands([
-            InstallCommand::class,
-        ]);
-    }
+    public function boot(Router $router): void
+    {
+        if ($this->app->runningInConsole()) {
+            $this->commands([
+                InstallCommand::class,
+            ]);
+        }
 
-    $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
-    $this->loadViewsFrom(__DIR__.'/../resources/views', 'bangjhon-pro-starter');
-    $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'bangjhon-pro-starter');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
 
-    $router->aliasMiddleware('bangjhon.role', RoleMiddleware::class);
+        $router->aliasMiddleware('bangjhon.role', RoleMiddleware::class);
 
     $this->publishes([
         __DIR__.'/../config/package/bangjhon-pro-starter.php' => config_path('bangjhon-pro-starter.php'),
