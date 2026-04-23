@@ -24,10 +24,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Bangjhon\\LaravelProStarter\\": "src/",
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Bangjhon\\LaravelProStarter\\": "src/"
         }
     },
     "autoload-dev": {
